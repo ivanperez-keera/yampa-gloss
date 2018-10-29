@@ -1,4 +1,4 @@
-# Yampa-gloss
+# yampa-gloss
 
 [![Build Status](https://travis-ci.org/ivanperez-keera/yampa-gloss.svg?branch=master)](https://travis-ci.org/ivanperez-keera/yampa-gloss)
 [![Version on Hackage](https://img.shields.io/hackage/v/yampa-gloss.svg)](https://hackage.haskell.org/package/yampa-gloss)
