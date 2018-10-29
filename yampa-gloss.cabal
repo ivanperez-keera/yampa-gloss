@@ -48,3 +48,7 @@ executable yampa-examples-gloss-rotatingcolor
                        , yampa-gloss >= 0.1   && <0.2
   else
     buildable: False
+
+source-repository head
+  type:     git
+  location: git://github.com/ivanperez-keera/yampa-gloss.git
