@@ -1,0 +1,22 @@
+name:                yampa-gloss
+version:             0.1.0.0
+synopsis:            A GLOSS backend for Yampa
+-- description:
+homepage:            http://github.com/ivanperez-keera/Yampa
+license:             MIT
+license-file:        LICENSE
+author:              Konstantin Saveljev <konstantin.saveljev@gmail.com>
+maintainer:          ivan.perez@keera.co.uk
+copyright:           (C) 2015 Konstantin Saveljev
+category:            Graphics
+build-type:          Simple
+extra-source-files:  ChangeLog.md
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Graphics.Gloss.Interface.FRP.Yampa
+  build-depends:       base  >=4.7    && <4.11
+                     , gloss >= 1.10  && <1.12
+                     , Yampa >= 0.9.6 && <0.12
+  hs-source-dirs:      src
+  default-language:    Haskell2010
