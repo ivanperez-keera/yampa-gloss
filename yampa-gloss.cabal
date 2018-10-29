@@ -20,7 +20,7 @@ maintainer:          ivan.perez@keera.co.uk
 copyright:           (C) 2015-2018 Konstantin Saveljev, 2018 Ivan Perez
 category:            Graphics
 build-type:          Simple
-extra-source-files:  ChangeLog.md
+extra-source-files:  CHANGELOG
 cabal-version:       >=1.10
 
 flag examples
