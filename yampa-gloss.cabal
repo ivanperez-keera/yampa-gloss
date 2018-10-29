@@ -13,6 +13,11 @@ build-type:          Simple
 extra-source-files:  ChangeLog.md
 cabal-version:       >=1.10
 
+flag examples
+  Description: Enable examples
+  default: False
+  manual: True
+
 library
   exposed-modules:     Graphics.Gloss.Interface.FRP.Yampa
   build-depends:       base  >=4.7    && <4.11
@@ -20,3 +25,16 @@ library
                      , Yampa >= 0.9.6 && <0.12
   hs-source-dirs:      src
   default-language:    Haskell2010
+
+executable yampa-examples-gloss-rotatingcolor
+  main-is: Example.hs
+  hs-source-dirs:  examples/
+  ghc-options : -Wall
+  if flag(examples)
+    buildable: True
+    build-depends:       base        >= 4.7   && <4.13
+                       , gloss       >= 1.10  && <1.13
+                       , Yampa       >= 0.9.6 && <0.13
+                       , yampa-gloss >= 0.1   && <0.2
+  else
+    buildable: False
