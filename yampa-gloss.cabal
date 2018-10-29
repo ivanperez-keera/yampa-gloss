@@ -45,7 +45,7 @@ executable yampa-examples-gloss-rotatingcolor
     build-depends:       base        >= 4.7   && <4.13
                        , gloss       >= 1.10  && <1.13
                        , Yampa       >= 0.9.6 && <0.13
-                       , yampa-gloss >= 0.1   && <0.2
+                       , yampa-gloss
   else
     buildable: False
 
