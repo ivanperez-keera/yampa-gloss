@@ -1,13 +1,23 @@
 name:                yampa-gloss
 version:             0.1.0.0
 synopsis:            A GLOSS backend for Yampa
--- description:
-homepage:            http://github.com/ivanperez-keera/Yampa
+description:
+  A Gloss backend for Yampa.
+  .
+  Gloss is a purely functional library to create pictures and animations.
+  Yampa is a Functional Reactive Programming DSL structured using arrow
+  combinators.
+  .
+  This library provides a function to crwate an interactive gloss animation
+  driven by a signal function that transforms a Gloss input signal into a Gloss
+  Picture.
+
+homepage:            http://github.com/ivanperez-keera/yampa-gloss
 license:             MIT
 license-file:        LICENSE
-author:              Konstantin Saveljev <konstantin.saveljev@gmail.com>
+author:              Konstantin Saveljev <konstantin.saveljev@gmail.com>, Ivan Perez <ivan.perez@keera.co.uk>
 maintainer:          ivan.perez@keera.co.uk
-copyright:           (C) 2015 Konstantin Saveljev
+copyright:           (C) 2015-2018 Konstantin Saveljev, 2018 Ivan Perez
 category:            Graphics
 build-type:          Simple
 extra-source-files:  ChangeLog.md
