@@ -9,7 +9,7 @@ A Gloss backend for Yampa.
 Gloss is a purely functional library to create pictures and animations.  Yampa
 is a Functional Reactive Programming DSL structured using arrow combinators.
 
-This library provides a function to crwate an interactive gloss animation
+This library provides a function to create an interactive gloss animation
 driven by a signal function that transforms a Gloss input signal into a Gloss
 Picture.
 
