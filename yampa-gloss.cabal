@@ -32,7 +32,7 @@ library
   exposed-modules:     Graphics.Gloss.Interface.FRP.Yampa
   build-depends:       base  >= 4.7   && <4.13
                      , gloss >= 1.10  && <1.13
-                     , Yampa >= 0.9.6 && <0.13
+                     , Yampa >= 0.9.6 && <0.14
   hs-source-dirs:      src
   default-language:    Haskell2010
 
@@ -45,7 +45,7 @@ executable yampa-examples-gloss-rotatingcolor
     buildable: True
     build-depends:       base        >= 4.7   && <4.13
                        , gloss       >= 1.10  && <1.13
-                       , Yampa       >= 0.9.6 && <0.13
+                       , Yampa       >= 0.9.6 && <0.14
                        , yampa-gloss
   else
     buildable: False
