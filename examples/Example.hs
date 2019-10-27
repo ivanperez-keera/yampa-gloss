@@ -1,7 +1,7 @@
 {-# LANGUAGE Arrows           #-}
 {-# LANGUAGE ParallelListComp #-}
 import Control.Arrow                      ( returnA, (&&&), (>>^), (^<<) )
-import FRP.Yampa                          ( SF, after, constant, switch, time )
+import FRP.Yampa                          ( SF, Event, after, constant, switch, time )
 import GHC.Float                          ( double2Float )
 import Graphics.Gloss                     ( Color, Display (InWindow)
                                           , Picture (Color, Pictures, Translate)
@@ -13,10 +13,13 @@ import Graphics.Gloss                     ( Color, Display (InWindow)
                                           , violet, white, withAlpha
                                           , yellow
                                           )
-import Graphics.Gloss.Interface.FRP.Yampa ( playYampa )
+import Graphics.Gloss.Interface.FRP.Yampa ( InputEvent, playYampa )
 
 main :: IO ()
-main = playYampa (InWindow "YampaDemo" (1280, 1050) (200, 200)) white 30 rotatingColor
+main = defaultPlay rotatingColor
+
+defaultPlay :: SF (Event InputEvent) Picture -> IO ()
+defaultPlay = playYampa (InWindow "YampaDemo" (1280, 1050) (200, 200)) white 30
 
 rotatingColor :: SF a Picture
 rotatingColor = proc _ -> do
