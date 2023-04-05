@@ -14,7 +14,7 @@
 -- driven by a signal function that transforms a Gloss input signal into a
 -- Gloss 'Picture'.
 module Graphics.Gloss.Interface.FRP.Yampa
-    (playYampa, InputEvent)
+    (InputEvent, playYampa)
   where
 
 -- External imports
