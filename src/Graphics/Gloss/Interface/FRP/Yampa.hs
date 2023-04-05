@@ -55,7 +55,7 @@ playYampa display color frequency mainSF = do
   let delta = 0.01 / fromIntegral frequency
 
       -- An action to convert the world to a picture
-      toPic = (const $ readIORef picRef)
+      toPic = const $ readIORef picRef
 
       -- A function to handle input events
       handleInput e t = do react handle (delta, Just (Event e))
