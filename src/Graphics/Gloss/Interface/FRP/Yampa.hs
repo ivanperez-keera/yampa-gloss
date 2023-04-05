@@ -46,9 +46,11 @@ playYampa display color frequency mainSF = do
   picRef <- newIORef blank
 
   handle <- reactInit
-    (return NoEvent)
-    (\_ updated pic -> when updated (picRef `writeIORef` pic) >> return False)
-    mainSF
+              (return NoEvent)
+              (\_ updated pic -> do when updated (picRef `writeIORef` pic)
+                                    return False
+              )
+              mainSF
 
   let delta = 0.01 / fromIntegral frequency
 
@@ -61,7 +63,7 @@ playYampa display color frequency mainSF = do
       -- A function to step the world one  iteration. It is passed the period
       -- of time (in seconds) needing to be  advanced 
       stepWorld   = 
-         (\d t -> let delta' = realToFrac d - t
+        (\d t -> let delta' = realToFrac d - t
                  in if delta' > 0
                       then react handle (delta', Just NoEvent) >> return 0.0
                       else return (-delta')) 
