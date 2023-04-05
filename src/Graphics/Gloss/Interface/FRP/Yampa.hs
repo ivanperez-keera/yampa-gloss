@@ -58,7 +58,8 @@ playYampa display color frequency mainSF = do
       toPic = (const $ readIORef picRef)
 
       -- A function to handle input events
-      handleInput = (\e t -> react handle (delta, Just (Event e)) >> return (t + delta))
+      handleInput e t = do react handle (delta, Just (Event e))
+                           return (t + delta)
 
       -- A function to step the world one  iteration. It is passed the period
       -- of time (in seconds) needing to be  advanced 
