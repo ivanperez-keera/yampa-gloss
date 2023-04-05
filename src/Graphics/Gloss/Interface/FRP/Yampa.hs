@@ -36,7 +36,7 @@ import qualified Graphics.Gloss.Interface.IO.Game as G
 -- time, and that it changes discretely.
 type InputEvent = G.Event
 
--- | Play the game in a window, updating when the value of the provided 
+-- | Play the game in a window, updating when the value of the provided
 playYampa :: Display                       -- ^ The display method
           -> Color                         -- ^ The background color
           -> Int                           -- ^ The refresh rate, in Hertz
@@ -62,11 +62,11 @@ playYampa display color frequency mainSF = do
                            return (t + delta)
 
       -- A function to step the world one  iteration. It is passed the period
-      -- of time (in seconds) needing to be  advanced 
-      stepWorld   = 
+      -- of time (in seconds) needing to be  advanced
+      stepWorld   =
         (\d t -> let delta' = realToFrac d - t
                  in if delta' > 0
                       then react handle (delta', Just NoEvent) >> return 0.0
-                      else return (-delta')) 
+                      else return (-delta'))
 
   playIO display color frequency 0 toPic handleInput stepWorld
