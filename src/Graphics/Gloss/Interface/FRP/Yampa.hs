@@ -1,3 +1,18 @@
+-- |
+-- Copyright  : (c) 2018-2023 Ivan Perez
+--              (c) 2015-2018 Konstantin Saveljev
+-- License    : MIT License (MIT)
+-- Maintainer : ivan.perez@keera.co.uk
+--
+-- Gloss backend for Yampa.
+--
+-- Gloss is a purely functional library to create pictures and animations.
+-- Yampa is a Functional Reactive Programming DSL structured around signal
+-- functions.
+--
+-- This module provides a function to create an interactive Gloss animation
+-- driven by a signal function that transforms a Gloss input signal into a
+-- Gloss 'Picture'.
 module Graphics.Gloss.Interface.FRP.Yampa
     (playYampa, InputEvent)
   where
