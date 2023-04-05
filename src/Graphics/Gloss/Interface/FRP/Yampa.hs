@@ -28,6 +28,12 @@ import           Graphics.Gloss                   (Color, Display, Picture,
 import           Graphics.Gloss.Interface.IO.Game (playIO)
 import qualified Graphics.Gloss.Interface.IO.Game as G
 
+-- | Type representing input events to the signal function.
+--
+-- Note that this type represents the kind of information placed inside the
+-- Yampa 'Event'. It will still be wrapped in an 'Event' to represent the fact
+-- that an 'InputEvent' may or may not be present at one particular point in
+-- time, and that it changes discretely.
 type InputEvent = G.Event
 
 -- | Play the game in a window, updating when the value of the provided 
