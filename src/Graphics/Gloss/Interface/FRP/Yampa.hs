@@ -37,10 +37,10 @@ import qualified Graphics.Gloss.Interface.IO.Game as G
 type InputEvent = G.Event
 
 -- | Play the game in a window, updating when the value of the provided 
-playYampa :: Display -- ^ The display method
-          -> Color   -- ^ The background color
-          -> Int     -- ^ The refresh rate, in Hertz
-          -> SF (Event InputEvent) Picture
+playYampa :: Display                       -- ^ The display method
+          -> Color                         -- ^ The background color
+          -> Int                           -- ^ The refresh rate, in Hertz
+          -> SF (Event InputEvent) Picture -- ^ Signal function
           -> IO ()
 playYampa display color frequency mainSF = do
   picRef <- newIORef blank
