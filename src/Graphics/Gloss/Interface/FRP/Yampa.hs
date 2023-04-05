@@ -17,6 +17,7 @@ module Graphics.Gloss.Interface.FRP.Yampa
     (playYampa, InputEvent)
   where
 
+-- External imports
 import           Control.Monad                    (when)
 import           Data.IORef                       (newIORef, readIORef,
                                                    writeIORef)
