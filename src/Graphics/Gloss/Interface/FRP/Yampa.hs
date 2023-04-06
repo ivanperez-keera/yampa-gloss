@@ -21,7 +21,7 @@ module Graphics.Gloss.Interface.FRP.Yampa
 import           Control.Monad                    (when)
 import           Data.IORef                       (newIORef, readIORef,
                                                    writeIORef)
-import           FRP.Yampa                        (Event (..), SF, react,
+import           FRP.Yampa                        (DTime, Event (..), SF, react,
                                                    reactInit)
 import           Graphics.Gloss                   (Color, Display, Picture,
                                                    blank)
@@ -55,14 +55,17 @@ playYampa display color frequency mainSF = do
   let delta = 0.01 / fromIntegral frequency
 
       -- An action to convert the world to a picture
+      toPic :: DTime -> IO Picture
       toPic = const $ readIORef picRef
 
       -- A function to handle input events
+      handleInput :: G.Event -> DTime -> IO DTime
       handleInput event timeAcc = do react handle (delta, Just (Event event))
                                      return (timeAcc + delta)
 
       -- A function to step the world one iteration. It is passed the period of
       -- time (in seconds) needing to be advanced
+      stepWorld :: Float -> DTime -> IO DTime
       stepWorld delta timeAcc
           | delta' > 0 = react handle (delta', Just NoEvent) >> return 0.0
           | otherwise  = return (-delta')
