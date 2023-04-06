@@ -63,10 +63,10 @@ playYampa display color frequency mainSF = do
 
       -- A function to step the world one iteration. It is passed the period of
       -- time (in seconds) needing to be advanced
-      stepWorld =
-        (\d t -> let delta' = realToFrac d - t
-                 in if delta' > 0
-                      then react handle (delta', Just NoEvent) >> return 0.0
-                      else return (-delta'))
+      stepWorld d t
+          | delta' > 0 = react handle (delta', Just NoEvent) >> return 0.0
+          | otherwise  = return (-delta')
+        where
+          delta' = realToFrac d - t
 
   playIO display color frequency 0 toPic handleInput stepWorld
