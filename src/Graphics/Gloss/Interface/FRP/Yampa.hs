@@ -52,9 +52,7 @@ playYampa display color frequency mainSF = do
               )
               mainSF
 
-  let delta = 0.01 / fromIntegral frequency
-
-      -- An action to convert the world to a picture
+  let -- An action to convert the world to a picture
       toPic :: DTime -> IO Picture
       toPic = const $ readIORef picRef
 
@@ -62,6 +60,8 @@ playYampa display color frequency mainSF = do
       handleInput :: G.Event -> DTime -> IO DTime
       handleInput event timeAcc = do react handle (delta, Just (Event event))
                                      return (timeAcc + delta)
+        where
+          delta = 0.01 / fromIntegral frequency
 
       -- A function to step the world one iteration. It is passed the period of
       -- time (in seconds) needing to be advanced
