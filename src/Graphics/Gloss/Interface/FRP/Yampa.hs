@@ -58,8 +58,9 @@ playYampa display color frequency mainSF = do
 
       -- A function to handle input events
       handleInput :: G.Event -> DTime -> IO DTime
-      handleInput event timeAcc = do react handle (delta, Just (Event event))
-                                     return (timeAcc + delta)
+      handleInput event timeAcc = do
+          _quit <- react handle (delta, Just (Event event))
+          return (timeAcc + delta)
         where
           delta = 0.01 / fromIntegral frequency
 
