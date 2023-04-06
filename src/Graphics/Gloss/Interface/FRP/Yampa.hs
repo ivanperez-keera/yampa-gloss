@@ -25,7 +25,6 @@ import           FRP.Yampa                        (Event (..), SF, react,
                                                    reactInit)
 import           Graphics.Gloss                   (Color, Display, Picture,
                                                    blank)
-import qualified Graphics.Gloss
 import           Graphics.Gloss.Interface.IO.Game (playIO)
 import qualified Graphics.Gloss.Interface.IO.Game as G
 
