@@ -1,5 +1,5 @@
 name:                yampa-gloss
-version:             0.2
+version:             0.2.1
 synopsis:            A GLOSS backend for Yampa
 description:
   A Gloss backend for Yampa.
