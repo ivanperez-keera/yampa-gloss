@@ -1,4 +1,5 @@
 2023-04-08 Ivan Perez <ivan.perez@keera.co.uk>
+        * Version bump (0.2.1) (#16).
         * Conformance with style guide (#14).
         * Bumps contraints on base, Yampa (#15).
 
