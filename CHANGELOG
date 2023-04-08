@@ -1,5 +1,6 @@
-2023-04-06 Ivan Perez <ivan.perez@keera.co.uk>
+2023-04-08 Ivan Perez <ivan.perez@keera.co.uk>
         * Conformance with style guide (#14).
+        * Bumps contraints on base, Yampa (#15).
 
 2019-02-24 Ivan Perez <ivan.perez@keera.es>
 
